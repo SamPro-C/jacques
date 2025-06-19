@@ -50,17 +50,19 @@ export function SidebarNav() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} passHref>
+          <Link
+            href={item.href}
+          >
             <SidebarMenuButton
               asChild
               isActive={pathname === item.href}
               onClick={isMobile ? () => setMobileSheetOpen(false) : undefined}
               tooltip={isMobile ? undefined : item.label}
             >
-              <>
+              <span>
                 <item.icon />
                 <span>{item.label}</span>
-              </>
+              </span>
             </SidebarMenuButton>
           </Link>
         </SidebarMenuItem>
@@ -114,4 +116,3 @@ export function SidebarNav() {
     </Sidebar>
   );
 }
-
