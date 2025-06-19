@@ -20,7 +20,8 @@ const skills = [
   "Project Management",
   "Client Communication",
   "Agile Methodologies",
-  "Social Media Marketing", // Added new skill
+  "Social Media Marketing",
+  "Management", // Added new skill
 ];
 
 export default function IntroductionPage() {
