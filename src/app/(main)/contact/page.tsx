@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Mail, Send, Phone, Loader2, Github, Linkedin } from "lucide-react";
+import { Mail, Send, Phone, Loader2, Github, Linkedin, Instagram, Twitter } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendContactMessage, type SendContactMessageInput } from "@/ai/flows/send-contact-message-flow";
 
@@ -43,7 +43,6 @@ export default function ContactPage() {
       const result = await sendContactMessage(input);
 
       if (result && result.acknowledgment) {
-        // Use a standard toast for success, not an error toast
         toast({
           title: "Message Sent!",
           description: result.acknowledgment,
@@ -160,7 +159,7 @@ export default function ContactPage() {
 
             <div>
               <p className="text-muted-foreground font-body mb-2">Connect with me on:</p>
-              <div className="flex justify-center space-x-4">
+              <div className="flex flex-wrap justify-center items-center gap-4">
                 <a
                   href="https://linkedin.com/in/yourprofile" // Replace with your actual LinkedIn URL
                   target="_blank"
@@ -178,6 +177,24 @@ export default function ContactPage() {
                   aria-label="GitHub Profile"
                 >
                   <Github className="mr-2 h-5 w-5" /> GitHub
+                </a>
+                <a
+                  href="https://instagram.com/yourusername" // Replace with your actual Instagram URL
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-accent hover:underline font-headline"
+                  aria-label="Instagram Profile"
+                >
+                  <Instagram className="mr-2 h-5 w-5" /> Instagram
+                </a>
+                <a
+                  href="https://twitter.com/yourusername" // Replace with your actual Twitter/X URL
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-accent hover:underline font-headline"
+                  aria-label="Twitter Profile"
+                >
+                  <Twitter className="mr-2 h-5 w-5" /> Twitter/X
                 </a>
               </div>
             </div>
