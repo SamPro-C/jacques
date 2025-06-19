@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -10,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Mail, Send, Phone, Loader2 } from "lucide-react";
+import { Mail, Send, Phone, Loader2, Github, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendContactMessage, type SendContactMessageInput } from "@/ai/flows/send-contact-message-flow";
 
@@ -42,6 +43,7 @@ export default function ContactPage() {
       const result = await sendContactMessage(input);
 
       if (result && result.acknowledgment) {
+        // Use a standard toast for success, not an error toast
         toast({
           title: "Message Sent!",
           description: result.acknowledgment,
@@ -141,18 +143,45 @@ export default function ContactPage() {
               </div>
             </form>
           </Form>
-           <div className="text-center pt-4 border-t space-y-2">
-            <p className="text-muted-foreground font-body mb-2">Alternatively, you can reach me directly:</p>
-            <a
-              href="mailto:obedjacques7@gmail.com"
-              className="inline-flex items-center text-accent hover:underline font-headline"
-            >
-              <Mail className="mr-2 h-5 w-5" /> obedjacques7@gmail.com
-            </a>
-            <div className="flex items-center justify-center text-accent font-headline">
-              <Phone className="mr-2 h-5 w-5" />
-              <span>0738002694</span>
+           <div className="text-center pt-4 border-t space-y-4">
+            <div>
+              <p className="text-muted-foreground font-body mb-2">Alternatively, you can reach me directly:</p>
+              <a
+                href="mailto:obedjacques7@gmail.com"
+                className="inline-flex items-center text-accent hover:underline font-headline mb-2"
+              >
+                <Mail className="mr-2 h-5 w-5" /> obedjacques7@gmail.com
+              </a>
+              <div className="flex items-center justify-center text-accent font-headline">
+                <Phone className="mr-2 h-5 w-5" />
+                <span>0738002694</span>
+              </div>
             </div>
+
+            <div>
+              <p className="text-muted-foreground font-body mb-2">Connect with me on:</p>
+              <div className="flex justify-center space-x-4">
+                <a
+                  href="https://linkedin.com/in/yourprofile" // Replace with your actual LinkedIn URL
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-accent hover:underline font-headline"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
+                </a>
+                <a
+                  href="https://github.com/yourusername" // Replace with your actual GitHub URL
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-accent hover:underline font-headline"
+                  aria-label="GitHub Profile"
+                >
+                  <Github className="mr-2 h-5 w-5" /> GitHub
+                </a>
+              </div>
+            </div>
+
             <p className="text-sm text-muted-foreground mt-4 font-body">
               I typically respond to inquiries within 24-48 business hours. Looking forward to connecting!
             </p>
