@@ -1,12 +1,71 @@
+"use client";
 
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, Send, Phone } from "lucide-react";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Mail, Send, Phone, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { sendContactMessage, type SendContactMessageInput } from "@/ai/flows/send-contact-message-flow";
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
+type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactPage() {
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  async function onSubmit(values: ContactFormValues) {
+    setIsLoading(true);
+    try {
+      const input: SendContactMessageInput = values;
+      const result = await sendContactMessage(input);
+
+      if (result && result.acknowledgment) {
+        toast({
+          title: "Message Sent!",
+          description: result.acknowledgment,
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Submission Error",
+          description: "The AI could not process your message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <div className="space-y-8">
       <header className="text-center py-8">
@@ -22,26 +81,66 @@ export default function ContactPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="name" className="font-headline text-lg">Full Name</Label>
-              <Input id="name" placeholder="e.g. Jane Doe" type="text" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email" className="font-headline text-lg">Email Address</Label>
-              <Input id="email" placeholder="e.g. jane@example.com" type="email" />
-            </div>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="message" className="font-headline text-lg">Message</Label>
-            <Textarea id="message" placeholder="Your message here..." rows={6} className="resize-none"/>
-          </div>
-          <div className="flex justify-end">
-            <Button type="submit" disabled> {/* Button is disabled as form is not functional yet */}
-              <Send className="mr-2 h-4 w-4" />
-              Send Message
-            </Button>
-          </div>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-headline text-lg">Full Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="e.g. Jane Doe" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-headline text-lg">Email Address</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="e.g. jane@example.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="font-headline text-lg">Message</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="Your message here..." rows={6} className="resize-none" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <div className="flex justify-end">
+                <Button type="submit" disabled={isLoading}>
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+              </div>
+            </form>
+          </Form>
            <div className="text-center pt-4 border-t space-y-2">
             <p className="text-muted-foreground font-body mb-2">Alternatively, you can reach me directly:</p>
             <a
