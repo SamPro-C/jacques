@@ -29,8 +29,8 @@ const MyComponent = ({ title }) => {
 
 export default MyComponent;
     `,
-    liveLink: "/", // Link to current site
-    // repoLink: "https://github.com/yourusername/portfolio-site" // Example
+    liveLink: "/",
+    repoLink: "https://github.com/yourusername/your-portfolio-repo" // Replace with your actual repo URL
   },
   {
     id: "2",
@@ -50,7 +50,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     # ... more transformations
     return df
     `,
-    // repoLink: "https://github.com/yourusername/etl-pipeline" // Example
+    repoLink: "https://github.com/yourusername/data-etl-pipeline-example" // Replace if you have a public repo
   },
   {
     id: "3",
@@ -77,13 +77,13 @@ router.get('/products', async (req, res) => {
 
 module.exports = router;
     `,
-    // repoLink: "https://github.com/yourusername/ecommerce-api" // Example
+    repoLink: "https://github.com/yourusername/ecommerce-api-example" // Replace if you have a public repo
   },
   {
     id: "4",
     title: "Lead Developer at SamPro Media",
     description: "Leading development efforts at SamPro Media, a dynamic digital agency. Responsible for architecting solutions, managing the development lifecycle, and mentoring team members to deliver high-quality web applications and digital experiences for diverse clients. Overseeing projects from conception to deployment, ensuring technical excellence and alignment with client goals.",
-    technologies: ["React", "Next.js", "Node.js", "Project Management Tools", "CI/CD", "Client Collaboration"],
+    technologies: ["React", "Next.js", "Node.js", "Project Management Tools", "CI/CD", "Client Collaboration", "Social Media Management"],
     imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "web agency leadership",
     codeSnippet: `
@@ -108,7 +108,7 @@ class ProjectLead {
 }
     `,
     liveLink: "https://sampro-media.vercel.app/",
-    // repoLink: "Relevant private repository or N/A"
+    repoLink: "Private repository or N/A for role overview"
   },
 ];
 
