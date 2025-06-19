@@ -37,7 +37,7 @@ export default function IntroductionPage() {
         <CardContent className="grid md:grid-cols-3 gap-8 items-center">
           <div className="md:col-span-1 flex justify-center">
             <Image
-              src="https://placehold.co/300x300.png"
+              src="https://firebasestorage.googleapis.com/v0/b/genkit-plugin-firebase.appspot.com/o/images%2FrcsL5uV3Y2BvH1mB19T5b%2Fimage_1724262789378_0?alt=media&token=c017eb85-634e-4c9b-864e-8361f8a4b11b"
               alt="Jacques Obed - Professional Photo"
               width={300}
               height={300}
