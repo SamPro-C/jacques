@@ -1,3 +1,4 @@
+
 // src/ai/flows/optimize-description.ts
 'use server';
 /**
@@ -30,14 +31,19 @@ const prompt = ai.definePrompt({
   name: 'optimizeDescriptionPrompt',
   input: {schema: OptimizeDescriptionInputSchema},
   output: {schema: OptimizeDescriptionOutputSchema},
-  prompt: `You are an expert in search engine optimization and marketing.
+  prompt: `You are an expert in crafting compelling and SEO-friendly project descriptions. Your goal is to rewrite the provided project description to be more engaging, clear, and optimized for the given keywords.
 
-You will rewrite the project description to optimize it for the given keywords.
+Instructions:
+1. Naturally integrate the provided keywords. Avoid keyword stuffing.
+2. Ensure the description is professional and suitable for a portfolio.
+3. Highlight any key achievements, features, or benefits mentioned in the original description.
+4. Aim for a concise yet impactful tone.
+5. The output should ONLY be the optimized description text.
 
-Description: {{{description}}}
-Keywords: {{{keywords}}}
+Original Description: {{{description}}}
+Keywords to optimize for: {{{keywords}}}
 
-Optimized Description:`, 
+Optimized Description:`,
 });
 
 const optimizeDescriptionFlow = ai.defineFlow(
@@ -51,3 +57,4 @@ const optimizeDescriptionFlow = ai.defineFlow(
     return output!;
   }
 );
+
