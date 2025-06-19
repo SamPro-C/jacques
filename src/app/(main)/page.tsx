@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 
@@ -14,6 +15,10 @@ const skills = [
   "System Analysis & Design",
   "Network Configuration",
   "Cybersecurity Fundamentals",
+  "Team Leadership",
+  "Project Management",
+  "Client Communication",
+  "Agile Methodologies",
 ];
 
 export default function IntroductionPage() {
@@ -42,7 +47,7 @@ export default function IntroductionPage() {
           </div>
           <div className="md:col-span-2 space-y-4">
             <p className="text-lg leading-relaxed">
-              Welcome to my portfolio! I am Jacques Obed, a passionate and versatile Computer Scientist with a strong foundation in software development, data analysis, and web technologies. My academic background in Computer Science has equipped me with robust problem-solving skills and a keen eye for detail.
+              Welcome to my portfolio! I am Jacques Obed, a passionate and versatile Computer Scientist with a strong foundation in software development, data analysis, and web technologies. I currently serve as the Lead Developer at <Link href="https://sampro-media.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">SamPro Media</Link>, where I drive innovation and lead development projects. My academic background in Computer Science has equipped me with robust problem-solving skills and a keen eye for detail.
             </p>
             <p className="text-lg leading-relaxed">
               Beyond the realm of code and algorithms, I am an avid creative, specializing in photography, videography, and both photo and video editing. I thrive on bringing ideas to life, whether through developing innovative applications, crafting compelling visual narratives, or deriving actionable insights from data using tools like Power BI.

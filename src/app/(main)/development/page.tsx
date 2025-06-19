@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -78,6 +79,37 @@ module.exports = router;
     `,
     // repoLink: "https://github.com/yourusername/ecommerce-api" // Example
   },
+  {
+    id: "4",
+    title: "Lead Developer at SamPro Media",
+    description: "Leading development efforts at SamPro Media, a dynamic digital agency. Responsible for architecting solutions, managing the development lifecycle, and mentoring team members to deliver high-quality web applications and digital experiences for diverse clients. Overseeing projects from conception to deployment, ensuring technical excellence and alignment with client goals.",
+    technologies: ["React", "Next.js", "Node.js", "Project Management Tools", "CI/CD", "Client Collaboration"],
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "web agency leadership",
+    codeSnippet: `
+// Conceptual: Project Leadership
+class ProjectLead {
+  constructor(team, client) {
+    this.team = team;
+    this.client = client;
+  }
+
+  defineArchitecture(requirements) {
+    // ...
+  }
+
+  manageSprint() {
+    // ... Agile methodologies
+  }
+
+  ensureQuality() {
+    // ... Code reviews, testing
+  }
+}
+    `,
+    liveLink: "https://sampro-media.vercel.app/",
+    // repoLink: "Relevant private repository or N/A"
+  },
 ];
 
 export default function DevelopmentPage() {
@@ -124,7 +156,7 @@ export default function DevelopmentPage() {
                 {project.liveLink && (
                   <Button asChild variant="outline">
                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo / Site
                     </a>
                   </Button>
                 )}
