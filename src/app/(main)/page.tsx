@@ -27,7 +27,7 @@ export default function IntroductionPage() {
     <div className="space-y-8">
       <header className="text-center py-8">
         <h1 className="text-5xl font-headline font-bold text-primary mb-2">Jacques Obed</h1>
-        <p className="text-2xl font-headline text-accent">Computer Scientist & Creative Professional</p>
+        <p className="text-2xl font-headline text-accent">Innovating at the Intersection of Technology & Creative Media</p>
       </header>
 
       <Card className="shadow-xl">
@@ -48,13 +48,13 @@ export default function IntroductionPage() {
           </div>
           <div className="md:col-span-2 space-y-4">
             <p className="text-lg leading-relaxed">
-              Welcome to my portfolio! I am Jacques Obed, a passionate and versatile Computer Scientist with a strong foundation in software development, data analysis, and web technologies. I currently serve as the Lead Developer at <Link href="https://sampro-media.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">SamPro Media</Link>, where I drive innovation and lead development projects. My academic background in Computer Science has equipped me with robust problem-solving skills and a keen eye for detail.
+              I'm Jacques Obed, a results-oriented Computer Scientist specializing in crafting impactful digital experiences. As Lead Developer at <Link href="https://sampro-media.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">SamPro Media</Link>, I spearhead the development of innovative web solutions, guiding projects from concept to deployment and fostering a culture of technical excellence. My foundation in Computer Science, combined with hands-on experience, allows me to tackle complex challenges with precision and creativity.
             </p>
             <p className="text-lg leading-relaxed">
-              Beyond the realm of code and algorithms, I am an avid creative, specializing in photography, videography, and both photo and video editing. I thrive on bringing ideas to life, whether through developing innovative applications, crafting compelling visual narratives, or deriving actionable insights from data using tools like Power BI.
+              My expertise extends beyond traditional software development into the creative domains of photography, videography, and advanced editing. I'm passionate about translating ideas into compelling visual stories and leveraging data analytics with tools like Power BI to drive decision-making. This unique fusion of technical acumen and creative vision is central to my approach.
             </p>
             <p className="text-lg leading-relaxed">
-              This portfolio showcases a blend of my technical expertise and creative endeavors. Explore my projects to see how I merge analytical thinking with artistic expression.
+              This portfolio offers a glimpse into my diverse skill set. Explore my projects to see how I merge analytical thinking with artistic expression to deliver tangible results.
             </p>
           </div>
         </CardContent>
@@ -63,7 +63,7 @@ export default function IntroductionPage() {
       <Card className="shadow-xl">
         <CardHeader>
           <CardTitle className="font-headline text-3xl text-primary">Core Skills</CardTitle>
-          <CardDescription className="font-body">A snapshot of my key competencies.</CardDescription>
+          <CardDescription className="font-body">A versatile skill set to bring your vision to life.</CardDescription>
         </CardHeader>
         <CardContent>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
@@ -81,7 +81,7 @@ export default function IntroductionPage() {
         <CardHeader>
           <CardTitle className="font-headline text-3xl text-primary">Get In Touch</CardTitle>
           <CardDescription className="font-body">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            Ready to collaborate or have a project in mind? Let's connect and explore how I can help you achieve your goals.
           </CardDescription>
         </CardHeader>
         <CardContent className="text-center">

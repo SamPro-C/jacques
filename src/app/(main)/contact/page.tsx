@@ -54,6 +54,9 @@ export default function ContactPage() {
               <Phone className="mr-2 h-5 w-5" />
               <span>0738002694</span>
             </div>
+            <p className="text-sm text-muted-foreground mt-4 font-body">
+              I typically respond to inquiries within 24-48 business hours. Looking forward to connecting!
+            </p>
           </div>
         </CardContent>
       </Card>
