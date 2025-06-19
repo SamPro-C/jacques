@@ -50,17 +50,17 @@ export function SidebarNav() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} passHref legacyBehavior>
+          <Link href={item.href} passHref>
             <SidebarMenuButton
               asChild
               isActive={pathname === item.href}
               onClick={isMobile ? () => setMobileSheetOpen(false) : undefined}
               tooltip={isMobile ? undefined : item.label}
             >
-              <a>
+              <>
                 <item.icon />
                 <span>{item.label}</span>
-              </a>
+              </>
             </SidebarMenuButton>
           </Link>
         </SidebarMenuItem>
