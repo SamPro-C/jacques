@@ -13,7 +13,7 @@ import {
   Code,
   Sparkles,
   Menu,
-  Mail, // Added Mail icon
+  Mail,
 } from "lucide-react";
 import {
   Sidebar,
@@ -40,7 +40,7 @@ const navItems = [
     label: "Desc. Optimizer",
     icon: Sparkles,
   },
-  { href: "/contact", label: "Contact", icon: Mail }, // Added Contact item
+  { href: "/contact", label: "Contact", icon: Mail },
 ];
 
 export function SidebarNav() {
@@ -52,7 +52,7 @@ export function SidebarNav() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href}>
+          <Link href={item.href} >
             <SidebarMenuButton
               asChild
               isActive={pathname === item.href}

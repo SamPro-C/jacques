@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Send } from "lucide-react";
+import { CheckCircle, Send, ExternalLink } from "lucide-react";
 
 const skills = [
   "Photography & Videography",
@@ -20,7 +20,26 @@ const skills = [
   "Project Management",
   "Client Communication",
   "Agile Methodologies",
-  "Social Media Management", // Updated skill
+  "Social Media Management",
+];
+
+const featuredProjects = [
+  {
+    title: "Personal Portfolio Website (This Site)",
+    description: "Showcasing skills and projects with Next.js, React, TypeScript, and Genkit AI for a seamless user experience.",
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "website portfolio react",
+    link: "/development",
+    linkLabel: "View Development Projects"
+  },
+  {
+    title: "Urban Canvas",
+    description: "Exploring the vibrant life and architecture of cityscapes through compelling photography.",
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "cityscape architecture",
+    link: "/photography",
+    linkLabel: "View Photography"
+  }
 ];
 
 export default function IntroductionPage() {
@@ -75,6 +94,42 @@ export default function IntroductionPage() {
               </li>
             ))}
           </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="shadow-xl">
+        <CardHeader>
+          <CardTitle className="font-headline text-3xl text-primary">Featured Projects</CardTitle>
+          <CardDescription className="font-body">A quick look at some of my work.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid md:grid-cols-2 gap-6">
+          {featuredProjects.map((project) => (
+            <Card key={project.title} className="flex flex-col overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="aspect-video relative w-full bg-muted">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  data-ai-hint={project.dataAiHint}
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-headline text-xl text-primary">{project.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{project.description}</p>
+              </CardContent>
+              <div className="p-6 pt-0">
+                <Button asChild variant="outline" className="w-full">
+                  <Link href={project.link}>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    {project.linkLabel}
+                  </Link>
+                </Button>
+              </div>
+            </Card>
+          ))}
         </CardContent>
       </Card>
 
