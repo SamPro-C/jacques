@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, Send } from "lucide-react";
 
 const skills = [
   "Photography & Videography",
@@ -73,6 +74,23 @@ export default function IntroductionPage() {
               </li>
             ))}
           </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="shadow-xl">
+        <CardHeader>
+          <CardTitle className="font-headline text-3xl text-primary">Get In Touch</CardTitle>
+          <CardDescription className="font-body">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="text-center">
+          <Button asChild size="lg">
+            <Link href="/contact">
+              <Send className="mr-2 h-5 w-5" />
+              Contact Me
+            </Link>
+          </Button>
         </CardContent>
       </Card>
     </div>

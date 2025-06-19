@@ -11,7 +11,7 @@ export function AppShell({ children }: AppShellProps) {
     <SidebarProvider>
       <SidebarNav />
       <SidebarInset>
-        <div className="min-h-screen p-4 md:p-8">
+        <div className="min-h-screen p-4 md:p-8 max-w-screen-xl mx-auto">
          {children}
         </div>
       </SidebarInset>
