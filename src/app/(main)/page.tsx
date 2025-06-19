@@ -68,13 +68,13 @@ export default function IntroductionPage() {
           </div>
           <div className="md:col-span-2 space-y-4">
             <p className="text-lg leading-relaxed">
-              I'm Jacques Obed, a results-oriented Computer Scientist specializing in crafting impactful digital experiences. As Lead Developer at <Link href="https://sampro-media.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">SamPro Media</Link>, I spearhead the development of innovative web solutions, guiding projects from concept to deployment and fostering a culture of technical excellence. My foundation in Computer Science, combined with hands-on experience, allows me to tackle complex challenges with precision and creativity.
+              Meet Jacques Obed: a dynamic Computer Scientist and Lead Developer at <Link href="https://sampro-media.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">SamPro Media</Link>, where I architect and deliver cutting-edge digital experiences. I drive web solution innovation from initial concept through to flawless deployment, championing technical excellence and creative problem-solving. My robust Computer Science background, fueled by hands-on experience, empowers me to transform complex challenges into elegant, effective solutions.
             </p>
             <p className="text-lg leading-relaxed">
-              My expertise extends beyond traditional software development into the creative domains of photography, videography, and advanced editing. I'm passionate about translating ideas into compelling visual stories and leveraging data analytics with tools like Power BI to drive decision-making. This unique fusion of technical acumen and creative vision is central to my approach.
+              But my world isn't just code. I thrive at the intersection of technology and artistry, bringing a creative eye to photography, videography, and advanced editing. I'm passionate about weaving compelling visual narratives and harnessing the power of data analytics (like Power BI) to inform strategy and achieve clear results. It's this powerful synergy of analytical rigor and creative flair that defines my work.
             </p>
             <p className="text-lg leading-relaxed">
-              This portfolio offers a glimpse into my diverse skill set. Explore my projects to see how I merge analytical thinking with artistic expression to deliver tangible results.
+              This portfolio is your window into my multifaceted capabilities. Dive in and discover how I blend strategic thinking with creative execution to produce work that truly performs.
             </p>
           </div>
         </CardContent>
