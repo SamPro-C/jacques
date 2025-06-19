@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Mail, Send, Phone, Loader2, Github, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Mail, Send, Phone, Loader2, Github, Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { sendContactMessage, type SendContactMessageInput } from "@/ai/flows/send-contact-message-flow";
 
@@ -195,6 +195,15 @@ export default function ContactPage() {
                   aria-label="Twitter Profile"
                 >
                   <Twitter className="mr-2 h-5 w-5" /> Twitter/X
+                </a>
+                <a
+                  href="https://facebook.com/yourprofile" // Replace with your actual Facebook URL
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-accent hover:underline font-headline"
+                  aria-label="Facebook Profile"
+                >
+                  <Facebook className="mr-2 h-5 w-5" /> Facebook
                 </a>
               </div>
             </div>
