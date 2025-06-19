@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, Phone } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -42,14 +42,18 @@ export default function ContactPage() {
               Send Message
             </Button>
           </div>
-           <div className="text-center pt-4 border-t">
+           <div className="text-center pt-4 border-t space-y-2">
             <p className="text-muted-foreground font-body mb-2">Alternatively, you can reach me directly:</p>
             <a
-              href="mailto:jacques.obed@example.com" // Replace with actual email
+              href="mailto:obedjacques7@gmail.com"
               className="inline-flex items-center text-accent hover:underline font-headline"
             >
-              <Mail className="mr-2 h-5 w-5" /> jacques.obed@example.com
+              <Mail className="mr-2 h-5 w-5" /> obedjacques7@gmail.com
             </a>
+            <div className="flex items-center justify-center text-accent font-headline">
+              <Phone className="mr-2 h-5 w-5" />
+              <span>0738002694</span>
+            </div>
           </div>
         </CardContent>
       </Card>
