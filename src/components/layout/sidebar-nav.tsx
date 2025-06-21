@@ -14,6 +14,7 @@ import {
   Sparkles,
   Menu,
   Mail,
+  FileText,
 } from "lucide-react";
 import {
   Sidebar,
@@ -40,6 +41,7 @@ const navItems = [
     label: "Desc. Optimizer",
     icon: Sparkles,
   },
+  { href: "/cv", label: "Download CV", icon: FileText },
   { href: "/contact", label: "Contact", icon: Mail },
 ];
 
@@ -74,7 +76,7 @@ export function SidebarNav() {
     return (
       <Sheet open={mobileSheetOpen} onOpenChange={setMobileSheetOpen}>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="fixed top-4 left-4 z-50">
+          <Button variant="outline" size="icon" className="fixed top-4 left-4 z-50 print:hidden">
             <Menu className="h-5 w-5" />
             <span className="sr-only">Open Menu</span>
           </Button>
@@ -93,7 +95,7 @@ export function SidebarNav() {
   
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" className="print:hidden">
       <SidebarHeader className="justify-center p-2">
          <div className="flex items-center gap-2 group-data-[collapsible=icon]:hidden">
             <svg width="24" height="24" viewBox="0 0 100 100" className="text-primary fill-current">
