@@ -1,5 +1,5 @@
 
-import { Download, Mail, Phone, Linkedin, Github, Globe } from "lucide-react";
+import { Download, Mail, Phone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CVPage = () => {
@@ -34,17 +34,9 @@ const CVPage = () => {
             <Phone className="h-4 w-4 flex-shrink-0" />
             <span>0738002694</span>
           </div>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
-            <Linkedin className="h-4 w-4 flex-shrink-0" />
-            <span>linkedin.com/in/yourprofile</span>
-          </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
-            <Github className="h-4 w-4 flex-shrink-0" />
-            <span>github.com/yourusername</span>
-          </a>
-           <a href="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+           <a href="https://www.obed.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
             <Globe className="h-4 w-4 flex-shrink-0" />
-            <span>Portfolio Website</span>
+            <span>www.obed.com</span>
           </a>
         </section>
 
