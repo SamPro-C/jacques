@@ -105,10 +105,10 @@ const CVPage = () => {
               Education
             </h3>
             <div>
-              <h4 className="text-xl font-semibold">Bachelor of Science in Computer Science</h4>
-              <p className="text-lg text-muted-foreground">University of Example, City, State | 20XX - 20XX</p>
+              <h4 className="text-xl font-semibold">Diploma in Computer Science</h4>
+              <p className="text-lg text-muted-foreground">The Co-operative University of Kenya</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                (Please update with your actual degree, university, and dates)
+                (You can add your graduation year here if you'd like)
               </p>
             </div>
           </section>
