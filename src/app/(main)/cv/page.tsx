@@ -1,5 +1,5 @@
 
-import { Download, Mail, Phone, Globe, Award, Linkedin } from "lucide-react";
+import { Download, Mail, Phone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -38,10 +38,6 @@ const CVPage = () => {
           <a href="https://www.obed.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
             <Globe className="h-4 w-4 flex-shrink-0" />
             <span>www.obed.com</span>
-          </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors col-span-1 sm:col-span-2 md:col-span-1">
-             <Linkedin className="h-4 w-4 flex-shrink-0" />
-             <span>linkedin.com/in/yourprofile</span>
           </a>
         </section>
 
@@ -144,17 +140,6 @@ const CVPage = () => {
             <div>
               <h4 className="text-xl font-semibold">Diploma in Computer Science</h4>
               <p className="text-lg text-muted-foreground">The Co-operative University of Kenya</p>
-            </div>
-          </section>
-
-          {/* Certifications */}
-          <section>
-            <h3 className="text-2xl font-bold text-primary font-headline border-b-2 border-accent pb-2 mb-4">
-              Certifications
-            </h3>
-            <div className="flex items-center gap-3">
-               <Award className="h-5 w-5 flex-shrink-0 text-accent" />
-               <p className="text-base">Placeholder for a future certification (e.g., Certified Web Developer)</p>
             </div>
           </section>
 
