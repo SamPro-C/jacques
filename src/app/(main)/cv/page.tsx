@@ -1,15 +1,8 @@
 
-"use client";
-
 import { Download, Mail, Phone, Linkedin, Github, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CVPage = () => {
-  // A helper to trigger the browser's print functionality.
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div className="bg-background text-foreground print:bg-white">
       <div className="max-w-4xl mx-auto p-4 md:p-8 lg:p-12 print:p-8">
@@ -22,9 +15,11 @@ const CVPage = () => {
             </h2>
           </div>
           <div className="mt-4 sm:mt-0 flex-shrink-0 print:hidden">
-            <Button onClick={handlePrint}>
-              <Download className="mr-2 h-4 w-4" />
-              Download as PDF
+            <Button asChild>
+              <a href="/jacques-obed-cv.pdf" download="Jacques Obed - CV.pdf">
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </a>
             </Button>
           </div>
         </header>
